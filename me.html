@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ME</title>
+        <style>
+p {
+    font-size: 20px;
+    color: rgb(0, 85, 149);
+}
+
+li {
+    color: rgb(0, 85, 149);
+}
+
+h2 {
+    color: rgb(20, 37, 48)
+}
+
+.window {
+    background-color: rgb(93, 151, 65);
+    max-width: 34em;
+}
+#ollo {
+    text-decoration: line-through;
+}
+        </style>
+        <link rel="stylesheet" href="styles.css"/>
+    </head>
+    <!-- This is a comment -->
+    <body class="window">
+        <h1> <img src="ProfBandC2.jpg" style="height: 1em;"/> This is a page dedicated to <em>Daniel</em> <img src="ProfBandC2.jpg" style="height: 1em;"/> </h1>
+        <h2>Who is in his family?</h2>
+        <h3>Parents?</h3>
+        <p>Joy & Steve</p>
+        <h3>Siblings?</h3>
+        <p>Kenneth, Caitlin and Patrick</p>
+        <h2>What are some of his hobbies??</h2>
+        <ul> <li>Programming</li><li>Puzzle Solving</li><li>Games</li></ul>
+        <h2>What are a few of his favorite things?</h2>
+        <p>Rain drops on rooftops and time in Seattle,
+            playing and gaming and winning fake battle,
+            Bright plastic packages tied up with strings...</p>
+        <h1> Anyways... <script>
+            let hour = new Date().getHours();
+            let greeting;
+
+            if (hour < 6) {
+                greeting = "You should really be getting back to bed!";
+            } else if (hour < 12) {
+                greeting = "Good morning!";
+            } else if (hour < 18) {
+                greeting = "Good afternoon!";
+            } else if (hour < 23) {
+                greeting = "Good evening!";
+            } else {
+                greeting = "You should really be getting to bed!";   
+
+            }
+
+            document.write(greeting);
+        </script></h1>
+    </body>
+</html>
