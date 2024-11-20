@@ -1,0 +1,94 @@
+    29af:	mov    $0x1,%r14d
+    29b5:	mov    %rsp,%r12
+    29b8:	jmp    29e2 <phase_6+0x5e>
+
+    29ba:	call   2efb <explode_bomb>
+    29bf:	jmp    29f1 <phase_6+0x6d>
+    
+    29c1:	add    $0x1,%rbx
+    29c5:	cmp    $0x5,%ebx
+    29c8:	jg     29da <phase_6+0x56>
+
+    29ca:	mov    (%r12,%rbx,4),%eax
+    29ce:	cmp    %eax,0x0(%rbp)
+    29d1:	jne    29c1 <phase_6+0x3d>
+    
+    29d3:	call   2efb <explode_bomb>
+    29d8:	jmp    29c1 <phase_6+0x3d>
+    
+    29da:	add    $0x1,%r14
+    29de:	add    $0x4,%r13
+    
+    29e2:	mov    %r13,%rbp
+    29e5:	mov    0x0(%r13),%eax
+    29e9:	sub    $0x1,%eax
+    29ec:	cmp    $0x5,%eax
+    29ef:	ja     29ba <phase_6+0x36>
+    
+    29f1:	cmp    $0x5,%r14d
+    29f5:	jg     29fc <phase_6+0x78>
+    29f7:	mov    %r14,%rbx
+    29fa:	jmp    29ca <phase_6+0x46>
+
+
+
+    29fc:	mov    $0x0,%esi
+
+    2a01:	mov    (%rsp,%rsi,4),%ecx
+    2a04:	mov    $0x1,%eax
+    2a09:	lea    0x4c20(%rip),%rdx        # 7630 <node1>
+    2a10:	cmp    $0x1,%ecx
+    2a13:	jle    2a20 <phase_6+0x9c>
+
+    2a15:	mov    0x8(%rdx),%rdx
+    2a19:	add    $0x1,%eax
+    2a1c:	cmp    %ecx,%eax
+    2a1e:	jne    2a15 <phase_6+0x91>
+
+    2a20:	mov    %rdx,0x20(%rsp,%rsi,8)
+    2a25:	add    $0x1,%rsi
+    2a29:	cmp    $0x6,%rsi
+    2a2d:	jne    2a01 <phase_6+0x7d>
+    2a2f:	mov    0x20(%rsp),%rbx
+    2a34:	mov    0x28(%rsp),%rax
+    2a39:	mov    %rax,0x8(%rbx)
+    2a3d:	mov    0x30(%rsp),%rdx
+    2a42:	mov    %rdx,0x8(%rax)
+    2a46:	mov    0x38(%rsp),%rax
+    2a4b:	mov    %rax,0x8(%rdx)
+    2a4f:	mov    0x40(%rsp),%rdx
+    2a54:	mov    %rdx,0x8(%rax)
+    2a58:	mov    0x48(%rsp),%rax
+    2a5d:	mov    %rax,0x8(%rdx)
+    2a61:	movq   $0x0,0x8(%rax)
+    2a68:	
+    
+    
+    
+    2a69:	mov    $0x5,%ebp
+    2a6e:	jmp    2a79 <phase_6+0xf5>
+
+    2a70:	mov    0x8(%rbx),%rbx
+    2a74:	sub    $0x1,%ebp
+    2a77:	je     2a8a <phase_6+0x106>   # GOAL
+
+    2a79:	mov    0x8(%rbx),%rax 	# Linked list?
+    2a7d:	mov    (%rax),%eax
+    2a7f:	cmp    %eax,(%rbx)
+    2a81:	jle    2a70 <phase_6+0xec>
+    2a83:	call   2efb <explode_bomb>
+    2a88:	jmp    2a70 <phase_6+0xec>
+
+    2a8a:	mov    0x58(%rsp),%rax
+    2a8f:	sub    %fs:0x28,%rax
+    2a96:	
+    2a98:	jne    2aa7 <phase_6+0x123>
+    2a9a:	add    $0x60,%rsp
+    2a9e:	pop    %rbx
+    2a9f:	pop    %rbp
+    2aa0:	pop    %r12
+    2aa2:	pop    %r13
+    2aa4:	pop    %r14
+    2aa6:	ret    
+
+    2aa7:	call   2280 <__stack_chk_fail@plt>
